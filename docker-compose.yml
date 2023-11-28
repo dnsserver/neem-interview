@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "5432:5432"
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "9080:8080"
